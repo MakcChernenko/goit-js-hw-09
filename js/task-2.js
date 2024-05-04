@@ -1,40 +1,44 @@
 // debugger;
 ('use strict');
-function calcAverageCalories(days) {
-  let numTotal = 0;
-  let numDay = 0;
-  let numMidle = 0;
-  if (days.length === 0) {
-    return 0;
-  }
-  for (const num of days) {
-    numDay = num.calories;
-    numTotal += numDay;
-  }
-  numMidle = numTotal / days.length;
-  return numMidle;
-}
-console.log(
-  calcAverageCalories([
-    { day: 'monday', calories: 3010 },
-    { day: 'tuesday', calories: 3200 },
-    { day: 'wednesday', calories: 3120 },
-    { day: 'thursday', calories: 2900 },
-    { day: 'friday', calories: 3450 },
-    { day: 'saturday', calories: 3280 },
-    { day: 'sunday', calories: 3300 },
-  ])
-); // 3180
-
-console.log(
-  calcAverageCalories([
-    { day: 'monday', calories: 2040 },
-    { day: 'tuesday', calories: 2270 },
-    { day: 'wednesday', calories: 2420 },
-    { day: 'thursday', calories: 1900 },
-    { day: 'friday', calories: 2370 },
-    { day: 'saturday', calories: 2280 },
-    { day: 'sunday', calories: 2610 },
-  ])
-); // 2270
-console.log(calcAverageCalories([])); // 0
+const allUsers = [
+  {
+    name: 'Moore Hensley',
+    friends: ['Sharron Pace'],
+  },
+  {
+    name: 'Sharlene Bush',
+    friends: ['Briana Decker', 'Sharron Pace'],
+  },
+  {
+    name: 'Ross Vazquez',
+    friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+  },
+  {
+    name: 'Elma Head',
+    friends: ['Goldie Gentry', 'Aisha Tran'],
+  },
+  {
+    name: 'Carey Barr',
+    friends: ['Jordan Sampson', 'Eddie Strong'],
+  },
+  {
+    name: 'Blackburn Dotson',
+    friends: ['Jacklyn Lucas', 'Linda Chapman'],
+  },
+  {
+    name: 'Sheree Anthony',
+    friends: ['Goldie Gentry', 'Briana Decker'],
+  },
+];
+const getUsersWithFriend = (users, friendName) =>
+  users.filter(user => user.friends.includes(friendName));
+console.log(getUsersWithFriend(allUsers, 'Briana Decker'));
+console.log(getUsersWithFriend(allUsers, 'Goldie Gentry'));
+console.log(getUsersWithFriend(allUsers, 'Adrian Cross')); // []
+// Оголошена змінна getUsersWithFriend
+// Змінній getUsersWithFriend присвоєна стрілочна функція з параметрами (users, friendName)
+// Для перебирання параметра users використовується метод filter()
+// Якщо значення параметра friendName — це рядок "Briana Decker", функція повертає масив об'єктів користувачів з іменами Sharlene Bush і Sheree Anthony
+// Якщо значення параметра friendName — це рядок "Goldie Gentry", функція повертає масив об'єктів користувачів з іменами Elma Head і Sheree Anthony
+// Якщо значення параметра friendName — це рядок "Adrian Cross", функція повертає порожній масив
+// Виклик функції з випадковими, але валідними аргументами повертає правильне значення
