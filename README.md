@@ -1,2 +1,3 @@
-# goit-js-hw-01
+# goit-js-hw-07
+
 this is my 1 javascript homework
