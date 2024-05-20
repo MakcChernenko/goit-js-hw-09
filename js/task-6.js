@@ -26,7 +26,7 @@ function destroyBoxes(event, context) {
 function fooCreateSquare(event, context) {
   context.innerHTML = '';
   let num = 0;
-  if (inputEl.value < 100 && inputEl.value > 0) {
+  if (inputEl.value <= 100 && inputEl.value > 0) {
     num = inputEl.value;
   }
   for (let i = 0; num > i; i++) {
