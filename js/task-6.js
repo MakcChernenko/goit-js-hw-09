@@ -1,28 +1,9 @@
-// Є input, у який користувач вводить бажану кількість елементів.Після натискання
-// на кнопку Create має рендеритися(додаватися в DOM) колекція з відповідною кількістю
-//  елементів і очищатися значення в інпуті.При повторному натисканні на кнопку Create
-//  поверх старої колекції має рендеритись нова.Після натискання на кнопку Destroy
-//  колекція елементів має очищатися.
-
-// Після натискання користувачем на кнопку Create треба провалідувати значення в
-// input, воно має бути в межах від 1 до 100 включно.Тільки якщо воно задоволяє
-// умову, мають додаватися нові < div > елементи в DOM.
-
 // Для рендеру елементів на сторінці створи функцію createBoxes(amount), яка
 // приймає один параметр — число, що зберігає кількість елементів для рендеру.
 
-// Функція має створювати стільки < div > елементів, скільки вказано в параметрі
-// amount і додавати їх у DOM дочірніми елементами для div#boxes.
-
-// Розміри першого <div> елемента мають бути 30px на 30px.
-// Кожен наступний елемент повинен бути ширшим і вищим від попереднього на 10px.
-// Усі елементи повинні мати випадковий колір фону.Використовуй готову функцію
-// getRandomHexColor() для отримання випадкового кольору.
-
-// Для очищення колекції після натискання на кнопку Destroy створи функцію
-// destroyBoxes(), яка очищає вміст div#boxes, у такий спосіб видаляючи всі
-// створені елементи.
-
+// =======================================================================================
+// Я вже написав без функції createBoxes(amount), зараз вечір понеділка, можна без неї?===
+// =======================================================================================
 const boxesEl = document.querySelector('#boxes');
 const inputEl = document.querySelector('#controls input');
 const buttonCreate = document.querySelector('[data-create]');
@@ -33,10 +14,21 @@ let heightDiv = 30;
 buttonCreate.addEventListener('click', event => {
   fooCreateSquare(event, boxesEl);
 });
+buttondestroy.addEventListener('click', event => {
+  destroyBoxes(event, boxesEl);
+});
+
+function destroyBoxes(event, context) {
+  context.innerHTML = '';
+  inputEl.value = '';
+}
+
 function fooCreateSquare(event, context) {
   context.innerHTML = '';
-  let array = [];
-  let num = inputEl.value;
+  let num = 0;
+  if (inputEl.value < 100 && inputEl.value > 0) {
+    num = inputEl.value;
+  }
   for (let i = 0; num > i; i++) {
     context.insertAdjacentHTML(
       'beforeend',
@@ -49,6 +41,7 @@ function fooCreateSquare(event, context) {
   num = 0;
   widthDiv = 30;
   heightDiv = 30;
+  inputEl.value = '';
 }
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
