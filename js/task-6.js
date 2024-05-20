@@ -33,7 +33,7 @@ function fooCreateSquare(event, context) {
     context.insertAdjacentHTML(
       'beforeend',
       `<div
-    style="width: ${widthDiv}px; height:${heightDiv}px; background-color:${getRandomHexColor()}" >eee</div>`
+    style="width: ${widthDiv}px; height:${heightDiv}px; background-color:${getRandomHexColor()}" ></div>`
     );
     widthDiv += 10;
     heightDiv += 10;
