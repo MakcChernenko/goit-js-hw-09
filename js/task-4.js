@@ -20,10 +20,12 @@ function formFoo(event, sel) {
       isValid = true;
     } else {
       isValid = false;
+      formEl.reset();
     }
   });
   if (!isValid) {
     alert(translate[lang].formValid);
+    return;
   }
   let formObj = {};
 

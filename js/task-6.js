@@ -30,13 +30,13 @@ function fooCreateSquare(event, context) {
     num = inputEl.value;
   }
   for (let i = 0; num > i; i++) {
-    context.insertAdjacentHTML(
-      'beforeend',
-      `<div
-    style="width: ${widthDiv}px; height:${heightDiv}px; background-color:${getRandomHexColor()}" ></div>`
-    );
+    let row = '';
+    row += `<div
+    style="width: ${widthDiv}px; height:${heightDiv}px; background-color:${getRandomHexColor()}" ></div>`;
+    context.insertAdjacentHTML('beforeend', row);
     widthDiv += 10;
     heightDiv += 10;
+    console.log(row);
   }
   num = 0;
   widthDiv = 30;
