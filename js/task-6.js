@@ -36,7 +36,6 @@ function fooCreateSquare(event, context) {
     context.insertAdjacentHTML('beforeend', row);
     widthDiv += 10;
     heightDiv += 10;
-    console.log(row);
   }
   num = 0;
   widthDiv = 30;
