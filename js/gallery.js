@@ -94,6 +94,10 @@ gallery.addEventListener('click', e => {
     return;
   }
   e.preventDefault();
-  e.target.src = e.target.dataset.source;
-  console.log(e.target.src);
+  console.log(e.target.dataset.source);
+  const instance = basicLightbox.create(`
+      <img src="${e.target.dataset.source}" width="1112" height="640">
+  `);
+
+  instance.show();
 });

@@ -16,8 +16,11 @@ img {
 }
 body {
   background-color: aqua;
-}
-main {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .gallery {
   width: 1440px;
@@ -28,6 +31,11 @@ main {
   justify-content: center;
   gap: 24px;
 }
-.gallery-item {
-  max-width: calc((100% - 48px) / 3);
+.gallery-image {
+  width: 360px;
+  height: 200px;
+  /* max-width: calc((100% - 48px) / 3); */
+}
+.gallery-item:hover {
+  scale: 1.04;
 }
