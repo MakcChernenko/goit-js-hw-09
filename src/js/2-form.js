@@ -52,6 +52,6 @@ function returnData(events) {
     textareaData.value = savedFormData.message;
     return console.log(savedFormData);
   } else {
-    return console.log(false);
+    return console.log('not data from localstorage');
   }
 }
