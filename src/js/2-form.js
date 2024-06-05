@@ -19,7 +19,6 @@ function addLocalStorage(event) {
     } else if (area.name === 'message') {
       formData.message = area.value.trim();
     }
-    console.log(formData);
     localStorage.setItem('feedback-form-state', JSON.stringify(formData));
   });
 }
