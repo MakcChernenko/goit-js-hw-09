@@ -1,0 +1,40 @@
+.MY-LOGO {
+  position: relative;
+  height: 30px;
+  width: 75px;
+}
+.my-logo-sfera {
+  width: 90px;
+  height: 37px;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  background-color: green;
+  box-sizing: content-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.my-logo-1name {
+  position: absolute;
+  bottom: -3px;
+  font-size: 20px;
+  text-decoration: gold underline;
+}
+.my-logo-ampersant {
+  right: 32px;
+  bottom: 7px;
+  position: absolute;
+  font-size: 10px;
+  /* text-decoration: deepskyblue overline 2px; */
+}
+.my-logo-2name {
+  position: absolute;
+  right: 5px;
+  bottom: 7px;
+  font-size: 10px;
+  text-decoration: deepskyblue overline 1px;
+  color: red;
+}
+.my-logo-m {
+  font-size: 32px;
+}
